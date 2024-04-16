@@ -1,0 +1,30 @@
+// Fonts imprt
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+@font-face{
+    font-family: 'Pokemon Title Hollow';
+    src: url(/ressources/fonts/pokemon-title-hollow.ttf);
+}
+@font-face{
+    font-family: 'Pokemon Title Solid';
+    src: url(/ressources/fonts/pokemon-title-solid.ttf);
+}
+@font-face{
+    font-family: 'Pokemon Body';
+    src: url(/ressources/fonts/pokemon-body.ttf);
+}
+
+// Components import
+@import 'components/body-style';
+@import 'components/header-style';
+@import 'components/footer-style';
+@import 'components/buttons-style';
+
+// Current page import
+@import 'components/home-style';
+
+
+
+main{
+    flex: 1;
+}

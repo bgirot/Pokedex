@@ -2,6 +2,8 @@
 
 function includeFooter() {
     echo '
+        <footer>
 
+        <footer>
     ';
 }

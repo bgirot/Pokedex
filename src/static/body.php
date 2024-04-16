@@ -1,11 +1,22 @@
 <?php
+require_once("./src/includes/constants.php");
+require_once("./src/static/header.php");
+require_once("./src/static/footer.php");
 
 function includeBody() {
-    includeHeader();
-
     echo '
-        Test aaaaahhhhhh
-    ';
+    <body>
+        <div class="main-container">
 
-    includeFooter();
+            '.includeHeader().'
+        
+            <main>
+                
+            </main>
+        
+            '.includeFooter().'
+
+        </div>
+    </body>
+    ';
 }
