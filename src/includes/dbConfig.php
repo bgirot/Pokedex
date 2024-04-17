@@ -1,7 +1,8 @@
 <?php
-//Paramètres de connexion à la base de données
-define('SERVEUR', 'localhost');         //hote
-define('USER', 'root');                 //login, par exemple "root" ou ""
-define('PWD', 'root');                  //mot de passe, par exemple "root" ou ""
-define('DB_NAME', 'nomBaseDeDonnees');  //nom de la base de données
-?>
+
+// DB connection parameters
+define('SERVER', 'localhost');        
+define('USER', 'root');
+define('PWD', 'root');
+define('DB_NAME', 'pokedex');
+

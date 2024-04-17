@@ -4,9 +4,9 @@ require_once("./src/includes/constants.php");
 function includeHeader() {
     return '
     <header>
-        <h1>
+        <a class="btn" href="">
             <img src="/ressources/images/title.png" alt="Pokédex">
-        </h1>
+        </a>
     </header>
     ';
 }
