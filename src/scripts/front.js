@@ -1,16 +1,32 @@
-// Useful elements
+// Dropdown menu manager
+window.onclick = function(event) {
+    console.log(event.target);
 
-// Dropdown menu
-function dropdownMenuManager(){
-    let dropdownMenu = document.getElementById('dropdown-menu');
+    let navButton = document.getElementById('nav-btn');
+    let navMenu = document.getElementById('nav-menu');
 
-    if(dropdownMenu.classList.contains('active')) {
+    if (navButton.contains(event.target)) {
 
-        dropdownMenu.classList.remove('active');
+        if (! navMenu.classList.contains('active')) {
 
-    } else {
+            navMenu.classList.add('active');
 
-        dropdownMenu.classList.add('active');
+        } else {
+
+            navMenu.classList.remove('active');
+
+        }
+
+    } else if (! navMenu.contains(event.target)) {
+
+        console.log("ok");
+
+        if (navMenu.classList.contains('active')) {
+
+            navMenu.classList.remove('active');
+
+        }
 
     }
+
 }

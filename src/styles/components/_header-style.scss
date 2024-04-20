@@ -1,68 +1,86 @@
 header{
+    position: relative;
     width: 100%;
+
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
 
-    a{
+    .fictive-element{
+        width: 3em;
+        height: 3em;
+    }
+
+
+    .title-section{
         position: relative;
-        width: 50%;
-        top: -6vw;
-        margin-bottom: -9vw;
+        width: calc(30vh + 15vw);
 
-        img{
-            position: relative;
+        h1{
+            position: absolute;
+            bottom: -5vh;
+
             width: 100%;
+
+            img{
+                width: 100%;
+            }
         }
     }
 
-    .main-navbar{
-        width: 100%;
 
-        .main-ul{
-            display: flex;
-            justify-content: flex-end;
+    .nav-section{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
 
+        #nav-btn{
             img{
-                height: 3em;
+                width: 3em;
+            }
+        }
+
+        nav{
+            display: none;
+
+            &.active{
+                display: block;
             }
 
-            .main-li{
+            top: 4em;
+
+            width: 15em;
+            position: absolute;
+
+            border: 0.25em solid #0F1014;
+
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), rgba(255,255, 255, 0.2));
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+            ul{
                 display: flex;
                 flex-direction: column;
-                align-items: flex-end;
-            }
+                align-items: center;
+                justify-content: center;
+                gap: 0.5em;
 
-            .dropdown-menu{
-                background: #316AB1;
                 padding: 0.5em;
-                display: none;
 
-                &.active{
-                    display: block;
-                }
+                li{
+                    width: 100%;
+                    padding: 0.5em;
 
-                .dropdown-ul{
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    gap: 0.5em;
+                    text-align: center;
+                    font-weight: bold;
+                    
 
-                    li{
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-
-                        width: 100%;
-                        padding: 0.5em 2em;
-
-                        background: #FFDA27;
-                        font-weight: bold;
-
-                        &:hover{
-                            background: #d6ba30;
-                        }
+                    &:hover{
+                        background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255,255, 255, 0.6));
+                        backdrop-filter: blur(10px);
+                        -webkit-backdrop-filter: blur(10px);
                     }
                 }
             }
