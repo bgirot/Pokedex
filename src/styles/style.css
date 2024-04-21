@@ -158,11 +158,6 @@ header .nav-section nav ul li:hover {
   background: #6d6d6d;
 }
 
-main {
-  flex: 1;
-  overflow-y: scroll;
-}
-
 .fictive-element {
   display: block;
   visibility: hidden;
