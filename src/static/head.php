@@ -16,6 +16,8 @@ function includeHead() {
         <link rel="stylesheet" href="'.NORMALIZE_FILE_PATH.'">
         <link rel="stylesheet" href="'.STYLE_FILE_PATH.'">
 
+        <script src="'.FRONT_PATH.'"></script>
+
         <link rel="icon" type="image/x-icon" href="'.LOGO_FILE_PATH.'">
         <title>'.WEBSITE_TITLE.'</title>
     </head>

@@ -6,7 +6,7 @@ require_once("./src/static/footer.php");
 function includeBody() {
     echo '
     <body>
-        <div class="main-container">
+        <div class="page-container">
 
             '.includeHeader().'
         
