@@ -1,7 +1,7 @@
 body{
     background: #316AB1;
 
-    font-family: 'Lato', sans-serif;    
+    font-family: 'Arboria-Medium';
     color: #0F1014;
 
     display: flex;
@@ -12,8 +12,10 @@ body{
     padding: 10vh 15vw;
     
     position: relative;
+    overflow: hidden;
 
-    .main-container{
+
+    .page-container{
         background: #FFDA27;
         
         width: 100%;
@@ -25,5 +27,13 @@ body{
         padding: 2em 2em 1em 2em;
 
         box-shadow: 0 0 2em #1e1e1e;
+
+        main{
+            flex: 1;
+        
+            overflow-y: auto;
+
+            width: 100%;
+        }
     }
 }

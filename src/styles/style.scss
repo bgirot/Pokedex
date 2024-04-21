@@ -1,5 +1,6 @@
 // Fonts imprt
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('https://db.onlinewebfonts.com/c/dda65d7f418f4ab23abf484c807c9f17?family=Arboria-Medium');
 
 @font-face{
     font-family: 'Pokemon Title Hollow';
@@ -19,6 +20,8 @@
 @import 'components/header-style';
 @import 'components/footer-style';
 @import 'components/buttons-style';
+@import 'components/backgrounds';
+@import 'components/scrollbar-style';
 
 // Current page import
 @import 'components/home-style';
@@ -27,6 +30,8 @@
 
 main{
     flex: 1;
+
+    overflow-y: scroll;
 }
 
 .fictive-element{

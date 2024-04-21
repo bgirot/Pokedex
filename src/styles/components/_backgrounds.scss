@@ -1,0 +1,35 @@
+.blob{
+    position: absolute;
+    z-index: -99;
+
+    width: 20em;
+
+    &#yellow-blob{
+        top: -10vh;
+        left: 75vw;
+    }
+
+    &#red-blob{
+        bottom: -7vh;
+        left: 15vw;
+    }
+    
+}
+
+.line{
+    position: absolute;
+    z-index: -99;
+
+    height: 40vh;
+
+    &#top{
+        left: 6vw;
+        top: 0;
+    }
+
+    &#bottom{
+        right: 6vw;
+        bottom: 0;
+    }
+    
+}
