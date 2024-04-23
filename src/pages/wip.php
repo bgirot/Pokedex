@@ -39,7 +39,7 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
             <div class="container">
                 <p>Continuez à explorer le site</p>
 
-                <a href="/src/temp/body.html" class="btn main-btn arrow">
+                <a href="<?php echo HOME_PATH; ?>" class="btn main-btn arrow">
                     Accueil
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="arrow" x="0px" y="0px" width="11.121px" height="19.414px" viewBox="0 0 11.121 19.414" enable-background="new 0 0 11.121 19.414" xml:space="preserve">
                         <polygon fill="#fff" points="1.414,19.414 0,18 8.293,9.707 0,1.414 1.414,0 11.121,9.707 "/>
