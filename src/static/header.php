@@ -1,33 +1,50 @@
 <?php
-require_once("./src/includes/constants.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . '/src/includes/constants.php');
 
 function includeHeader() {
     return '
-        <header>
-            
-            <div class="fictive-element"></div>
+    <header>
 
-            <div class="title-section">
-                <h1>
-                    <a class="btn" href="">
-                        <img src="'.TITLE_PATH.'" alt="Pokédex">
-                    </a>
-                </h1>
-            </div>
-            
-            <div class="nav-section">
-                <button id="nav-btn" class="btn">
-                    <img src="'.USER_ICON_PATH.'" alt="Menu utilisateur">
-                </button>
-                <nav class="" id="nav-menu">
-                    <ul>
-                        <li class="btn">Connexion</li>
-                        <li class="btn">Mon Pokédex</li>
-                        <li class="btn">À propos</li>
-                    </ul>
-                </nav>
-            </div>
+        <div class="fictive-element"></div>
 
-        </header>
+        <div class="title-section">
+            <h1>
+                <a class="btn" href="'.HOME_PATH.'">
+                    <img src="/ressources/images/title.png" alt="Pokédex">
+                </a>
+            </h1>
+        </div>
+        
+        <div class="nav-section">
+            <button id="nav-btn" class="btn">
+                <img src="/ressources/icons/user-icon-hollow-black.png" alt="Menu utilisateur">
+            </button>
+            <nav class="" id="nav-menu">
+                <ul>
+                    <li>
+                        <a class="btn menu-btn" href="'.HOME_PATH.'">
+                            Accueil
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn menu-btn" href="'.WIP_PATH.'">
+                            Connexion
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn menu-btn" href="'.WIP_PATH.'">
+                            Mon Pokédex
+                        </a>
+                    </li>
+                    <li>
+                        <a class="btn menu-btn" href="'.ABOUT_PATH.'">
+                            À propos
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+    </header>
     ';
 }

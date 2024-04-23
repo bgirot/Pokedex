@@ -1,9 +1,10 @@
 <?php
-require_once("./src/includes/constants.php");
-require_once("./src/static/header.php");
-require_once("./src/static/footer.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . '/src/includes/constants.php');
 
-function includeBody() {
+require_once(DOCUMENT_ROOT . '/src/static/header.php');
+require_once(DOCUMENT_ROOT . '/src/static/footer.php');
+
+function openBody() {
     echo '
     <body>
         <div class="page-container">
@@ -22,7 +23,11 @@ function includeBody() {
             '.includeHeader().'
         
             <main>
-                
+    ';
+}
+
+function closeBody(){
+    echo '
             </main>
         
             '.includeFooter().'

@@ -1,7 +1,7 @@
 <?php
-require_once("./src/includes/constants.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . '/src/includes/constants.php');
 
-function includeHead() {
+function includeHead($stylesheetPath) {
 
     echo '
     <head>
@@ -13,8 +13,9 @@ function includeHead() {
         <meta name="author" content="'.META_AUTHOR.'">
 
 
-        <link rel="stylesheet" href="'.NORMALIZE_FILE_PATH.'">
-        <link rel="stylesheet" href="'.STYLE_FILE_PATH.'">
+        <link rel="stylesheet" href="'.NORMALIZE_PATH.'">
+        <link rel="stylesheet" href="'.DEFAULT_STYLE_PATH.'">
+        <link rel="stylesheet" href="'.$stylesheetPath.'">
 
         <script src="'.FRONT_PATH.'"></script>
 

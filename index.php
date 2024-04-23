@@ -8,12 +8,12 @@ error_reporting(E_ALL);
 mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
 // Imports
-require_once("./src/includes/constants.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . '/src/includes/constants.php');
 
-require_once("./src/static/head.php");
-require_once("./src/static/header.php");
-require_once("./src/static/body.php");
-require_once("./src/static/footer.php");
+require_once(DOCUMENT_ROOT .  '/src/static/head.php');
+require_once(DOCUMENT_ROOT .  '/src/static/header.php');
+require_once(DOCUMENT_ROOT .  '/src/static/body.php');
+require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
 
 
 ?>
@@ -23,8 +23,14 @@ require_once("./src/static/footer.php");
     
 
     <?php
-        includeHead();
-        includeBody();
+        includeHead(DEFAULT_STYLE_PATH);
+        openBody();
+
+    ?>
+
+    <?php
+
+        closeBody();
     ?>
 
 
