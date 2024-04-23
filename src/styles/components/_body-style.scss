@@ -1,7 +1,7 @@
 body{
     background: #316AB1;
 
-    font-family: 'Arboria-Medium';
+    font-family: 'Arboria Medium';
     color: #0F1014;
 
     display: flex;
@@ -29,6 +29,9 @@ body{
         box-shadow: 0 0 2em #1e1e1e;
 
         main{
+            position: relative;
+
+            z-index: 1;
             flex: 1;
         
             overflow-y: auto;
