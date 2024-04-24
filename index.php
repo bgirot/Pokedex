@@ -12,6 +12,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . '/src/includes/constants.php');
 
 require_once(DOCUMENT_ROOT .  '/src/includes/dbConfig.php');
 require_once(DOCUMENT_ROOT .  '/src/scripts/dbFunctions.php');
+require_once(DOCUMENT_ROOT .  '/src/scripts/functionsQuery.php');
+require_once(DOCUMENT_ROOT .  '/src/scripts/displayPokedex.php');
 
 require_once(DOCUMENT_ROOT .  '/src/static/head.php');
 require_once(DOCUMENT_ROOT .  '/src/static/header.php');
@@ -30,9 +32,11 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
         $mysqli = connectionDB();
         openBody();
 
-        echo '<pre>';
-        print_r(readDB($mysqli, "SELECT * FROM pokemon"));
-        echo '</pre>';
+        echo '<main>';
+
+        displayPokedex(getPokedex($mysqli));
+
+        echo '</main>';
     ?>
 
     <?php

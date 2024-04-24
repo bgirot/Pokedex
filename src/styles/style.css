@@ -212,6 +212,37 @@ header .nav-section nav ul li a:hover {
   background: #6d6d6d;
 }
 
+.pokedex-wrapper {
+  width: 100%;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  row-gap: 1em;
+}
+.pokedex-wrapper img {
+  max-width: 5em;
+}
+.pokedex-wrapper .pokemon-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: hidden;
+  padding: 1em;
+  background: #2f71c2;
+  border-radius: 1em;
+  box-shadow: 0.25em 0.25em 0.25em #1e1e1e;
+}
+.pokedex-wrapper .pokemon-card .pokemon-name {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
 .fictive-element {
   display: block;
   visibility: hidden;
