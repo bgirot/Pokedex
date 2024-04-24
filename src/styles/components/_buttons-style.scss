@@ -29,6 +29,11 @@
 
     box-shadow: 0 0 0.3em #1e1e1e;
 
+    &:hover {
+        background: #2f71c2;
+        color: #FFFFFF;
+    }
+
     &.arrow{
         &:after {
             content: '';

@@ -142,6 +142,10 @@ header .nav-section nav ul li a:hover {
   padding: 0.7em 2.5em 0.7em 2.5em;
   box-shadow: 0 0 0.3em #1e1e1e;
 }
+.main-btn:hover {
+  background: #2f71c2;
+  color: #FFFFFF;
+}
 .main-btn.arrow:after {
   content: "";
   position: absolute;
