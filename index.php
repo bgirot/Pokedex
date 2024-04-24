@@ -10,6 +10,9 @@ mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 // Imports
 require_once($_SERVER['DOCUMENT_ROOT'] . '/src/includes/constants.php');
 
+require_once(DOCUMENT_ROOT .  '/src/includes/dbConfig.php');
+require_once(DOCUMENT_ROOT .  '/src/scripts/dbFunctions.php');
+
 require_once(DOCUMENT_ROOT .  '/src/static/head.php');
 require_once(DOCUMENT_ROOT .  '/src/static/header.php');
 require_once(DOCUMENT_ROOT .  '/src/static/body.php');
@@ -24,12 +27,17 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
 
     <?php
         includeHead(DEFAULT_STYLE_PATH);
+        $mysqli = connectionDB();
         openBody();
 
+        echo '<pre>';
+        print_r(readDB($mysqli, "SELECT * FROM pokemon"));
+        echo '</pre>';
     ?>
 
     <?php
 
+        closeDB($mysqli);
         closeBody();
     ?>
 

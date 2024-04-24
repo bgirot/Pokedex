@@ -43,6 +43,7 @@ body .page-container main {
   position: relative;
   z-index: 1;
   flex: 1;
+  overflow-x: hidden;
   overflow-y: auto;
   width: 100%;
 }
