@@ -51,5 +51,17 @@ function readDB($mysqli, $sql_input) {
 # For write requests
 function writeDB($mysqli, $sql_input) {
 
-	// TODO
+	$result = mysqli_query($mysqli, $sql_input);
+
+	if($result) {
+
+		return true;
+
+	} else {
+
+		return false;
+
+	}
+
+
 }
