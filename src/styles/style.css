@@ -167,6 +167,17 @@ header .nav-section nav ul li a:hover {
   left: 85%;
 }
 
+.see-more-btn {
+  background: #F8FFFF;
+  box-shadow: 0 0 0.4em #1e1e1e;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  font-size: 0.8;
+}
+.see-more-btn:hover {
+  background: #c2ffff;
+}
+
 .blob {
   position: absolute;
   z-index: -99;
