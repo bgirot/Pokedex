@@ -29,55 +29,71 @@ window.onclick = function(event) {
 }
 
 // To generate the color of the pokemon card in the pokedex page
-
-// Calculates the average color of the image and the average color of the most
-// comon colors
+// Sets the main color of an image to the background of the div (for pokemon cards)
 function setMainColorToBackground(id) {
     let img = document.getElementById("img-"+id);
     let card = document.getElementById("card-"+id);
 
-    let blockSize = 5,              // only visit every 5 pixels
-        defaultRGB = {r:0,g:0,b:0}, // for non-supporting envs
+    let blockSize = 5,
+        defaultRGB = {r:0,g:0,b:0},
         canvas = document.createElement('canvas'),
         context = canvas.getContext && canvas.getContext('2d'),
         data, width, height,
         i = -4,
         length,
-        rgb = {r:0,g:0,b:0},
-        count = 0;
+        allRGB = new Map();
+
+    const whiteThreshold = 255,
+          blackThreshold = 55;
 
     if (!context) {
         return defaultRGB;
     }
 
-    height = canvas.height = img.naturalHeight || img.offsetHeight || imgEl.height;
-    width = canvas.width = img.naturalWidth || img.offsetWidth || imgEl.width;
+    height = canvas.height = img.naturalHeight || img.offsetHeight || img.height;
+    width = canvas.width = img.naturalWidth || img.offsetWidth || img.width;
 
     context.drawImage(img, 0, 0);
 
     try {
         data = context.getImageData(0, 0, width, height);
     } catch(e) {
-        /* security error, img on diff domain */
+        // Security error, img on diff domain
         return defaultRGB;
     }
 
     length = data.data.length;
 
-    while ( (i += blockSize * 4) < length ) {
 
-        ++count;
-
-        rgb.r += data.data[i];
-        rgb.g += data.data[i+1];
-        rgb.b += data.data[i+2];
-    }
+    // Counts the number of occurrences of each color between the two thresholds
+    while ((i += blockSize * 4) < length) {
+        let currentRGB = {
+            r: data.data[i],
+            g: data.data[i + 1],
+            b: data.data[i + 2]
+        };
+        
+        let colorString = `rgb(${currentRGB.r},${currentRGB.g},${currentRGB.b})`;
     
+        if ((currentRGB.r > blackThreshold && currentRGB.g > blackThreshold && currentRGB.b > blackThreshold) && (currentRGB.r < whiteThreshold && currentRGB.g < whiteThreshold && currentRGB.b < whiteThreshold)) {
+            if (allRGB.has(colorString)) {
+                allRGB.set(colorString, allRGB.get(colorString) + 1);
+            } else {
+                allRGB.set(colorString, 1);
+            }
+        }
+    }
 
-    // ~~ used to floor values
-    rgb.r = ~~(rgb.r/count);
-    rgb.g = ~~(rgb.g/count);
-    rgb.b = ~~(rgb.b/count);
+    // Keeps the color with the most occurrences 
+    let mainColor = null;
+    let mainCount = 0;
 
-    card.style.background = "rgb(" + rgb.r + "," + rgb.g  + "," + rgb.b + ")";
+    allRGB.forEach((count, color) => {
+        if (count > mainCount) {
+            mainColor = color;
+            mainCount = count;
+        }
+    });
+    
+    card.style.background = mainColor;
 }
