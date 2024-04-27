@@ -23,9 +23,11 @@ define('PROJECT_ICON_PATH', '/ressources/icons/project.png');
 define('NORMALIZE_PATH', '/src/styles/normalize.css');
 define('DEFAULT_STYLE_PATH', '/src/styles/style.css');
 define('ABOUT_WIP_STYLE_PATH', '/src/styles/pages/about-wip.css');
+define('POKEMON_STYLE_PATH', '/src/styles/pages/pokemon.css');
 define('FRONT_PATH', '/src/scripts/front.js');
 
 // Pages paths
 define('HOME_PATH', '/index.php');
 define('WIP_PATH', '/src/pages/wip.php');
 define('ABOUT_PATH', '/src/pages/about.php');
+define('POKEMON_PATH', '/src/pages/pokemon.php');
