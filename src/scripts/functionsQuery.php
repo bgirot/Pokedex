@@ -5,10 +5,8 @@ function getPokedex($mysqli) {
 
     $result = readDB($mysqli, $sql_input);
 
-    $imagePath = "/ressources/images/pokemons/pokemon_sugimori/";
-
     foreach($result as $key => $value) {
-        $result[$key] = array_merge($result[$key], array("image_path" => $imagePath . $key + 1 . ".png"));
+        $result[$key] = array_merge($result[$key], array("image_path" => POKEMON_SUGIMORI_PATH . $key + 1 . ".png"));
     }
 
 
