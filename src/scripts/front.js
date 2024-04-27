@@ -32,7 +32,7 @@ window.onclick = function(event) {
 // Sets the main color of an image to the background of the div (for pokemon cards)
 function setMainColorToBackground(id) {
     let img = document.getElementById("img-"+id);
-    let card = document.getElementById("card-"+id);
+    let card = document.getElementById("card-background-"+id);
 
     let blockSize = 5,
         defaultRGB = {r:0,g:0,b:0},

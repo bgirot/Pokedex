@@ -1,0 +1,87 @@
+.pokemon-card{
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5em;
+
+    width: 13vw;
+    min-height: 18em;
+    height: 33vh;
+    max-height: 20em;
+    overflow: hidden;
+
+    background: url("/ressources/images/grass.png");
+    border-radius: 1em;
+    box-shadow: #1e1e1e 0.1em 0.1em 0.8em;
+    
+    .card-bottom{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 100% 100% 0 0;
+        border: 0.3em solid #1e1e1e;
+        border-bottom: none;
+
+        position: relative;
+
+        width: 110%;
+        height: 35%;
+        background: #99CDB1;
+
+
+        .pokemon-name{
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.9vw;
+            width: 100%;
+        }
+
+        .see-more-btn{
+            position: absolute;
+            top: -1.25em;
+            z-index: 3;
+        }
+    }
+
+}
+
+@media screen and (max-width: 1300px) {
+    .pokemon-card{
+        width: 18vw;
+
+        .card-bottom{
+            .pokemon-name{
+                font-size: 2.5vw;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .pokemon-card{
+        width: 22vw;
+
+        .card-bottom{
+            .pokemon-name{
+                font-size: 3.2vw;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 765px) {
+    .pokemon-card{
+        width: 30vw;
+
+        .card-bottom{
+            .pokemon-name{
+                font-size: 4.3vw;
+            }
+        }
+    }
+}
