@@ -1,6 +1,6 @@
 .pokemon-wrapper{
     display: grid;
-    grid-template-columns: 33% 33% 33%;
+    grid-template-columns: 30% 40% 25%;
     justify-content: space-between;
 
     height: 100%;
@@ -27,7 +27,7 @@
             display: flex;
             justify-content: flex-start;
             align-items: flex-end;
-            gap: 0.5em;
+            gap: 0.3em;
 
             font-size: 3em;
 
@@ -40,7 +40,7 @@
                 bottom: 0.22em;
 
                 height: 0.2em;
-                width: 1.5em;
+                width: 1em;
                 background: #E13319;
             }
         }
@@ -63,10 +63,178 @@
     }
 
     .middle{
-        background: red;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2em;
+        padding-left: 1em;
+
+
+        .image-and-stats-container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+
+            margin-top: 20%;
+
+            height: 50%;
+            width: 100%;
+
+            .stats-wrapper{
+                position: relative;
+                height: 100%;
+                width: 10%;
+
+                padding-top: 10%;
+                padding-left: 5%;
+
+                .stats-container{
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+
+                    font-size: 0.9em;
+
+                    .line{
+                        position: relative;
+                        background: #110F14;
+
+                        &.horizontal{
+                            height: 0.1rem;
+                            width: calc(100% - 0.8rem);
+                        }
+
+                        &.vertical{
+                            height: 100%;
+                            width: 0.1rem;
+                        }
+                    }
+
+                    .circle{
+                        width: 0.8rem;
+                        height: 0.8rem;
+                        background: #E13319;
+                        border-radius: 100%;
+                        border: 0.15rem solid #F8FFFF;
+                    }
+
+                    .top{
+                        top: calc(10% + 0.3rem);
+                        position: absolute;
+                        width: 300%;
+                        height: max-content;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+
+                    }
+
+                    .stats-center{
+                        height: 100%;
+
+                        display: flex;
+                        align-items: center;
+
+
+                        .height{
+                            position: absolute;
+                            width: max-content;
+                            transform: rotate(90deg);
+                            left: -3em;
+                        }
+                    }
+
+                    .bottom{
+                        position: absolute;
+                        bottom: -0.4rem;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+
+                        .shapes-container{
+                            width: 150%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;    
+                        }
+
+                        .weight{
+                            bottom: -1.5em;
+                            position: absolute;
+                            width: max-content;
+                        }
+                        
+                    }
+                }
+            }
+
+            .image-container{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 90%;
+                height: 100%;
+
+                img{
+                    height: 100%;
+                    max-width: 100%;
+                    max-height: auto;
+                    z-index: 99;
+                }
+
+                .shadow{
+                    position: absolute;
+                    bottom: 0;
+
+                    width: 40%;
+                    height: 10%;
+                    border-radius: 100%;
+
+                    background: #E8C310;
+                }
+            }
+        }
+
+
+        .toggle-container{
+            margin-bottom: 15%;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1em;
+
+            input{
+                display: none;
+
+                &:checked ~ label{
+                    border: 0.2em solid #110F14;
+                }
+            }
+
+            label{
+                padding: 0.5em;
+
+                color: #F8FFFF;
+                font-size: 1.2em;
+                background: #E13319;
+                border-radius: 0.3em;
+
+                &:hover{
+                    background: #ee462c;
+                }
+
+            }
+        }
+
+
+        
+
     }
 
     .right{
-        background: green;
+        background: none;
     }
 }

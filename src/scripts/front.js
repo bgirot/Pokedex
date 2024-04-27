@@ -97,3 +97,15 @@ function setMainColorToBackground(id) {
     
     card.style.background = mainColor;
 }
+
+
+// To chose between displaying shiny version or not this must work all the time
+function shinyToNormal() {
+    let img = document.getElementById("img-pokemon");
+    img.src = img.src.replace("_shiny", "");
+}
+
+function normalToShiny() {
+    let img = document.getElementById("img-pokemon");
+    img.src = img.src.replace("pokemon_sugimori", "pokemon_sugimori_shiny");
+}

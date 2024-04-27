@@ -81,6 +81,44 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
 
         <section class="middle">
             
+            <div class="image-and-stats-container">
+                <div class="stats-wrapper">
+                    <div class="stats-container">
+                        <div class="top">
+                            <div class="line horizontal"></div>
+                            <div class="circle"></div>
+                        </div>
+                        <div class="stats-center">
+                            <span class="height"><?php echo'Taille - ' .$pokemon["infos"]["0"]["taille"]. ' m' ?></span>
+                            <div class="line vertical"></div>
+                        </div>
+                        <div class="bottom">
+                            <div class="shapes-container">
+                                <div class="line horizontal"></div>
+                                <div class="circle"></div>
+                            </div>
+                            
+                            <span class="weight"><?php echo'Poids - ' .$pokemon["infos"]["0"]["poids"]. ' kg' ?></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-container">
+                    <?php echo'<img id="img-pokemon" src="' .POKEMON_SUGIMORI_PATH. $pokemon["infos"]["0"]["id_pokemon"] . '.png" alt="Image de ' .$pokemon["infos"]["0"]["nom"]. '"></img>'?>
+                    <div class="shadow"></div>
+                </div>
+            </div>
+
+            <div class="toggle-container">
+                <div class="choice">
+                    <input id="normal" name="normal-or-shiny" type="radio" checked="checked" onchange="shinyToNormal()">
+                    <label class="btn" for="normal">Normal</label>
+                </div>
+                <div class="choice">
+                    <input id="shiny" name="normal-or-shiny" type="radio" onchange="normalToShiny()">
+                    <label class="btn" for="shiny">Shiny</label>
+                </div>
+            </div>
+
         </section>
 
 

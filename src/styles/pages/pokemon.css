@@ -1,6 +1,6 @@
 .pokemon-wrapper {
   display: grid;
-  grid-template-columns: 33% 33% 33%;
+  grid-template-columns: 30% 40% 25%;
   justify-content: space-between;
   height: 100%;
   width: 100%;
@@ -20,7 +20,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
-  gap: 0.5em;
+  gap: 0.3em;
   font-size: 3em;
 }
 .pokemon-wrapper .left .name-container .name {
@@ -30,7 +30,7 @@
   position: relative;
   bottom: 0.22em;
   height: 0.2em;
-  width: 1.5em;
+  width: 1em;
   background: #E13319;
 }
 .pokemon-wrapper .left .types-container {
@@ -47,8 +47,138 @@
   height: 4em;
 }
 .pokemon-wrapper .middle {
-  background: red;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+  padding-left: 1em;
+}
+.pokemon-wrapper .middle .image-and-stats-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 20%;
+  height: 50%;
+  width: 100%;
+}
+.pokemon-wrapper .middle .image-and-stats-container .stats-wrapper {
+  position: relative;
+  height: 100%;
+  width: 10%;
+  padding-top: 10%;
+  padding-left: 5%;
+}
+.pokemon-wrapper .middle .image-and-stats-container .stats-wrapper .stats-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+}
+.pokemon-wrapper .middle .image-and-stats-container .stats-wrapper .stats-container .line {
+  position: relative;
+  background: #110F14;
+}
+.pokemon-wrapper .middle .image-and-stats-container .stats-wrapper .stats-container .line.horizontal {
+  height: 0.1rem;
+  width: calc(100% - 0.8rem);
+}
+.pokemon-wrapper .middle .image-and-stats-container .stats-wrapper .stats-container .line.vertical {
+  height: 100%;
+  width: 0.1rem;
+}
+.pokemon-wrapper .middle .image-and-stats-container .stats-wrapper .stats-container .circle {
+  width: 0.8rem;
+  height: 0.8rem;
+  background: #E13319;
+  border-radius: 100%;
+  border: 0.15rem solid #F8FFFF;
+}
+.pokemon-wrapper .middle .image-and-stats-container .stats-wrapper .stats-container .top {
+  top: calc(10% + 0.3rem);
+  position: absolute;
+  width: 300%;
+  height: -moz-max-content;
+  height: max-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pokemon-wrapper .middle .image-and-stats-container .stats-wrapper .stats-container .stats-center {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.pokemon-wrapper .middle .image-and-stats-container .stats-wrapper .stats-container .stats-center .height {
+  position: absolute;
+  width: -moz-max-content;
+  width: max-content;
+  transform: rotate(90deg);
+  left: -3em;
+}
+.pokemon-wrapper .middle .image-and-stats-container .stats-wrapper .stats-container .bottom {
+  position: absolute;
+  bottom: -0.4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.pokemon-wrapper .middle .image-and-stats-container .stats-wrapper .stats-container .bottom .shapes-container {
+  width: 150%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pokemon-wrapper .middle .image-and-stats-container .stats-wrapper .stats-container .bottom .weight {
+  bottom: -1.5em;
+  position: absolute;
+  width: -moz-max-content;
+  width: max-content;
+}
+.pokemon-wrapper .middle .image-and-stats-container .image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 100%;
+}
+.pokemon-wrapper .middle .image-and-stats-container .image-container img {
+  height: 100%;
+  max-width: 100%;
+  max-height: auto;
+  z-index: 99;
+}
+.pokemon-wrapper .middle .image-and-stats-container .image-container .shadow {
+  position: absolute;
+  bottom: 0;
+  width: 40%;
+  height: 10%;
+  border-radius: 100%;
+  background: #E8C310;
+}
+.pokemon-wrapper .middle .toggle-container {
+  margin-bottom: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.pokemon-wrapper .middle .toggle-container input {
+  display: none;
+}
+.pokemon-wrapper .middle .toggle-container input:checked ~ label {
+  border: 0.2em solid #110F14;
+}
+.pokemon-wrapper .middle .toggle-container label {
+  padding: 0.5em;
+  color: #F8FFFF;
+  font-size: 1.2em;
+  background: #E13319;
+  border-radius: 0.3em;
+}
+.pokemon-wrapper .middle .toggle-container label:hover {
+  background: #ee462c;
 }
 .pokemon-wrapper .right {
-  background: green;
+  background: none;
 }/*# sourceMappingURL=pokemon.css.map */
