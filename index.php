@@ -32,11 +32,7 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
         $mysqli = connectionDB();
         openBody();
 
-        echo '<main>';
-
         displayPokedex(getPokedex($mysqli));
-
-        echo '</main>';
     ?>
 
     <?php
