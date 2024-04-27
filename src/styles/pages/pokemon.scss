@@ -1,0 +1,72 @@
+.pokemon-wrapper{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    justify-content: space-between;
+
+    height: 100%;
+    width: 100%;
+
+    overflow: hidden;
+
+
+
+    section{
+        height: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .left{
+        gap: 1.5em;
+
+        .name-container{
+            width: 100%;
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            gap: 0.5em;
+
+            font-size: 3em;
+
+            .name{
+                font-weight: bold;
+            }
+
+            .name-decoration{
+                position: relative;
+                bottom: 0.22em;
+
+                height: 0.2em;
+                width: 1.5em;
+                background: #E13319;
+            }
+        }
+
+        .types-container{
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
+            width: max-content;
+        }
+
+        .description{
+            font-size: 1.1em;
+        }
+
+        .fictive-element{
+            height: 4em;
+        }
+    }
+
+    .middle{
+        background: red;
+    }
+
+    .right{
+        background: green;
+    }
+}

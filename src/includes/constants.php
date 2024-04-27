@@ -18,6 +18,7 @@ define('USER_ICON_PATH', '/ressources/icons/user-icon-hollow-black.png');
 define('TITLE_PATH', '/ressources/images/title.png');
 define('WIP_ICON_PATH', '/ressources/icons/wip.png');
 define('PROJECT_ICON_PATH', '/ressources/icons/project.png');
+define('TYPE_ICONS_PATH', '/ressources/icons/types/');
 
 // File paths
 define('NORMALIZE_PATH', '/src/styles/normalize.css');

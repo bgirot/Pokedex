@@ -1,0 +1,25 @@
+.type{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.5em;
+
+    width: 100%;
+    height: fit-content;
+
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
+
+    background: #316AB1;
+    box-shadow: 0.1em 0.1em 0.2em #1e1e1e;
+
+    font-size: 1.2em;
+    color: #F8FFFF;
+
+    img{
+        position: relative;
+        height: 1em;
+
+        top: 0.05em;
+    }
+}

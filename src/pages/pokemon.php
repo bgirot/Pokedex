@@ -46,19 +46,50 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
         
         // Get the information from the database
         $pokemon = getPokemon($mysqli, $id_pokemon);
+        // echo '<pre>';
+        // print_r($pokemon);
+        // echo '</pre>';
 
     ?>
 
     <div class="pokemon-wrapper">
-        <div class="left"></div>
 
-        <div class="middle"></div>
+        <section class="left">
 
-        <div class="right"></div>
+            <div class="name-container">
+                <h2 class="name"><?php echo $pokemon["infos"]["0"]["nom"] ?></h2>
+                <div class="name-decoration"></div>
+            </div>
+
+            <div class="types-container">
+                <?php
+                    foreach($pokemon["types"] as $key => $value) {
+                        echo'<div class="type ' .strtolower($value["libelle"]). '">
+                                 <span>Type : ' .$value["libelle"]. '</span>
+                                 <img src="' .TYPE_ICONS_PATH. 'type-' .$value["id_type"]. '.svg" alt="Icone type ' .$value["libelle"]. '"></img>
+                             </div>';
+                    }
+                ?>
+            </div>
+
+            <span class="description"><?php echo $pokemon["infos"]["0"]["description"] ?></span>
+
+            <div class="fictive-element"></div>
+
+        </section>
+
+
+        <section class="middle">
+            
+        </section>
+
+
+        <section class="right">
+
+        </section>
     </div>
 
     <?php
-
         closeBody();
     ?>
 
