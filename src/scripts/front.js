@@ -28,6 +28,47 @@ window.onclick = function(event) {
 
 }
 
+// Moves menu manager
+window.onclick = function(event) {
+
+    let moveButton = document.getElementById('move-btn');
+    let moveMenu = document.getElementById('move-menu');
+    let moveClose = document.getElementById('move-close');
+
+    if (moveButton.contains(event.target)) {
+
+        if (! moveMenu.contains(event.target)) {
+            
+            if (! moveMenu.classList.contains('active')) {
+
+                moveMenu.classList.add('active');
+
+            } else {
+
+                moveMenu.classList.remove('active');
+
+            }
+        } else if (moveClose.contains(event.target)) {
+            
+            if (moveMenu.classList.contains('active')) {
+
+                moveMenu.classList.remove('active');
+    
+            }
+        }
+
+    } else if (! moveMenu.contains(event.target)) {
+
+        if (moveMenu.classList.contains('active')) {
+
+            moveMenu.classList.remove('active');
+
+        }
+    }
+
+}
+
+
 // To generate the color of the pokemon card in the pokedex page
 // Sets the main color of an image to the background of the div (for pokemon cards)
 function setMainColorToBackground(id) {

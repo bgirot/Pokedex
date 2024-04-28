@@ -377,7 +377,7 @@ header .nav-section nav ul li a:hover {
 }
 .type {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   gap: 0.5em;
   width: 100%;

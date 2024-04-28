@@ -24,6 +24,8 @@ define('POKEMON_MINIATURE_PATH', '/ressources/images/pokemons/pokemon_miniature/
 define('POKEMON_SUGIMORI_PATH', '/ressources/images/pokemons/pokemon_sugimori/');
 define('POKEMON_SUGIMORI_SHINY_PATH', '/ressources/images/pokemons/pokemon_sugimori_shiny/');
 define('ARROW_PATH', '/ressources/icons/arrow.svg');
+define('SWORD_PATH', '/ressources/icons/sword.svg');
+define('CROSS_PATH', '/ressources/icons/cross.svg');
 
 // File paths
 define('NORMALIZE_PATH', '/src/styles/normalize.css');

@@ -13,6 +13,20 @@ function getPokedex($mysqli) {
     return $result;
 }
 
+function getAllTypes($mysqli) {
+    $sql_input = "SELECT * FROM type";
+
+    $raw_result = readDB($mysqli, $sql_input);
+
+    $result = array();
+
+    foreach ($raw_result as $key => $value) {
+        $result[$value["id_type"]] = $value["libelle"];
+    }
+
+    return $result;
+}
+
 
 function getPokemon($mysqli, $id_pokemon) {
 

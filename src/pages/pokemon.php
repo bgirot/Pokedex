@@ -47,7 +47,9 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
         
         // Get the information from the database
         $pokemon = getPokemon($mysqli, $id_pokemon);
+        $allTypes = getAllTypes($mysqli);
         // echo '<pre>';
+        // print_r($allTypes);
         // print_r($pokemon);
         // echo '</pre>';
 
@@ -71,6 +73,51 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
                              </div>';
                     }
                 ?>
+                <div id="move-btn" class="type btn">
+                    <span>Capacités</span>
+                    <img src="<?php echo SWORD_PATH ?>" alt="Icone attaque">
+                    <div id="move-menu" class="moves-container inactive">
+                        <div class="table-header">
+                            <div class="fictive-element"></div>
+                            <div class="caption">Capacités de <?php echo $pokemon["infos"]["0"]["nom"] ?></div>
+                            <button id="move-close" class="close-btn btn">
+                                <img src="<?php echo CROSS_PATH ?>" alt="Bouton Croix">
+                            </button>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Capacité</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">PP</th>
+                                    <th scope="col">Puissance</th>
+                                    <th scope="col">Précision</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php 
+
+                                    foreach($pokemon["moves"] as $key => $value) {
+                                        if($value["puissance_capacite"] == null) {
+                                            $puissance = 0;
+                                        } else {
+                                            $puissance = $value["puissance_capacite"];
+                                        }
+
+                                        echo '<tr>';
+                                        echo '<th scope="row">' .$value["libelle_capacite"]. '</th>';
+                                        echo '<td>' .$allTypes[$value["id_type"]]. '</td>';
+                                        echo '<td>' .$value["pp_capacite"]. '</td>';
+                                        echo '<td>' .$puissance. '</td>';
+                                        echo '<td>' .$value["precision_capacite"]. '</td>';
+                                        echo '</tr>';
+                                    }
+                                
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
 
             <span class="description"><?php echo $pokemon["infos"]["0"]["description"] ?></span>
@@ -134,11 +181,17 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
                     <?php
                         $reversed_pre_evolutions = array_reverse($pokemon["pre_evolutions"]);   // So that the order is correct
                         foreach($reversed_pre_evolutions as $key => $value) {
-                            echo '<div class="img-evolution inactive"><div class="img-wrapper"><img src="' .POKEMON_SUGIMORI_PATH. $value["id_pokemon_base"]. '.png" alt="Pokémon ' .$value["nom"]. '"></img></div></div>';
+                            if($key == 0) {
+                                echo '<div class="img-evolution inactive"><div class="img-wrapper"><div class="level">Niveau 1 requis</div><img src="' .POKEMON_SUGIMORI_PATH. $value["id_pokemon_base"]. '.png" alt="Pokémon ' .$value["nom"]. '"></img></div></div>';
+                            } else {
+                                echo '<div class="img-evolution inactive"><div class="img-wrapper"><div class="level">Niveau ' .$reversed_pre_evolutions[$key - 1]["niveau"]. ' requis</div><img src="' .POKEMON_SUGIMORI_PATH. $value["id_pokemon_base"]. '.png" alt="Pokémon ' .$value["nom"]. '"></img></div></div>';
+                            }
+
+                            
                         }
                         echo '<div class="img-evolution active"><div class="img-wrapper"><img src="' .POKEMON_SUGIMORI_PATH. $pokemon["infos"]["0"]["id_pokemon"]. '.png" alt="Pokémon ' .$pokemon["infos"]["0"]["nom"]. '"></img></div></div>';
                         foreach($pokemon["evolutions"] as $key => $value) {
-                            echo '<div class="img-evolution inactive"><div class="img-wrapper"><img src="' .POKEMON_SUGIMORI_PATH. $value["id_pokemon_evolue"]. '.png" alt="Pokémon ' .$value["nom"]. '"></img></div></div>';
+                            echo '<div class="img-evolution inactive"><div class="img-wrapper"><div class="level">Niveau ' .$value["niveau"]. ' requis</div><img src="' .POKEMON_SUGIMORI_PATH. $value["id_pokemon_evolue"]. '.png" alt="Pokémon ' .$value["nom"]. '"></img></div></div>';
                         }
                     ?>
                 </div>
