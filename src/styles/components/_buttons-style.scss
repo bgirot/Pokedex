@@ -146,3 +146,41 @@
         }
     }
 }
+
+
+.submit-btn{
+    position: relative;
+
+    list-style: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 0.5em;
+    border: none;
+    background: #316AB1;
+	color: #F8FFFF;
+	overflow: hidden;
+    font-family: 'Arboria Medium';
+
+    font-size: 1.2em;
+    box-shadow: 0 0 0.3em #1e1e1e;
+
+    padding: 0.5em;
+
+    transition: all 0.3s;
+
+    &:hover {
+        background: #2f71c2;
+    }
+}
+
+
+.forgot-btn{
+    text-align: center;
+
+    &:hover{
+        text-decoration: underline;
+    }
+}

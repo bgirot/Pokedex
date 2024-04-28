@@ -1,7 +1,22 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . '/src/includes/constants.php');
 
+session_start();
+
 function includeHeader() {
+    if (isset($_SESSION["is_connected"]) && $_SESSION["is_connected"] === true) {
+        $co_or_deco = '<a class="btn menu-btn" href="'.DISCONNECTION_PATH.'">
+                           Déconnexion
+                       </a>';
+        $user_icon = CONNECTED_USER_ICON_PATH . $_SESSION["id_user"] . '.png';
+    } else{
+        $co_or_deco = '<a class="btn menu-btn" href="'.CONNECTION_PATH.'">
+                           Connexion
+                       </a>';
+        $user_icon = USER_ICON_PATH;
+    }
+
+
     return '
     <header>
 
@@ -10,14 +25,14 @@ function includeHeader() {
         <div class="title-section">
             <h1>
                 <a class="btn" href="'.HOME_PATH.'">
-                    <img src="/ressources/images/title.png" alt="Pokédex">
+                    <img src="' .TITLE_PATH. '" alt="Pokédex">
                 </a>
             </h1>
         </div>
         
         <div class="nav-section">
             <button id="nav-btn" class="btn">
-                <img src="/ressources/icons/user-icon-hollow-black.png" alt="Menu utilisateur">
+                <img src=' .$user_icon. ' alt="Menu utilisateur">
             </button>
             <nav class="" id="nav-menu">
                 <ul>
@@ -27,9 +42,7 @@ function includeHeader() {
                         </a>
                     </li>
                     <li>
-                        <a class="btn menu-btn" href="'.WIP_PATH.'">
-                            Connexion
-                        </a>
+                        ' .$co_or_deco. '
                     </li>
                     <li>
                         <a class="btn menu-btn" href="'.WIP_PATH.'">

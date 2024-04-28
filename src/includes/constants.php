@@ -26,6 +26,7 @@ define('POKEMON_SUGIMORI_SHINY_PATH', '/ressources/images/pokemons/pokemon_sugim
 define('ARROW_PATH', '/ressources/icons/arrow.svg');
 define('SWORD_PATH', '/ressources/icons/sword.svg');
 define('CROSS_PATH', '/ressources/icons/cross.svg');
+define('CONNECTED_USER_ICON_PATH', '/ressources/icons/connected-user-');
 
 // File paths
 define('NORMALIZE_PATH', '/src/styles/normalize.css');
@@ -33,9 +34,14 @@ define('DEFAULT_STYLE_PATH', '/src/styles/style.css');
 define('ABOUT_WIP_STYLE_PATH', '/src/styles/pages/about-wip.css');
 define('POKEMON_STYLE_PATH', '/src/styles/pages/pokemon.css');
 define('FRONT_PATH', '/src/scripts/front.js');
+define('CONNECTION_STYLE_PATH', '/src/styles/pages/connection.css');
 
 // Pages paths
 define('HOME_PATH', '/index.php');
 define('WIP_PATH', '/src/pages/wip.php');
 define('ABOUT_PATH', '/src/pages/about.php');
 define('POKEMON_PATH', '/src/pages/pokemon.php');
+define('CONNECTION_PATH', '/src/pages/connection.php');
+define('DISCONNECTION_PATH', '/src/pages/logout.php');
+define('LOGIN_PATH', '/src/pages/login.php');
+define('LOGOUT_PATH', '/src/pages/logout.php');

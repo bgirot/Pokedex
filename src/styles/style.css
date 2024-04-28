@@ -237,6 +237,34 @@ header .nav-section nav ul li a:hover {
   display: block;
 }
 
+.submit-btn {
+  position: relative;
+  list-style: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5em;
+  border: none;
+  background: #316AB1;
+  color: #F8FFFF;
+  overflow: hidden;
+  font-family: "Arboria Medium";
+  font-size: 1.2em;
+  box-shadow: 0 0 0.3em #1e1e1e;
+  padding: 0.5em;
+  transition: all 0.3s;
+}
+.submit-btn:hover {
+  background: #2f71c2;
+}
+
+.forgot-btn {
+  text-align: center;
+}
+.forgot-btn:hover {
+  text-decoration: underline;
+}
+
 .blob {
   position: absolute;
   z-index: -99;
@@ -323,7 +351,7 @@ header .nav-section nav ul li a:hover {
   max-height: 20em;
   overflow: hidden;
   background: url("/ressources/images/grass.png");
-  border-radius: 1em;
+  border-radius: 0.5em;
   box-shadow: #1e1e1e 0.1em 0.1em 0.8em;
 }
 .pokemon-card .card-bottom {

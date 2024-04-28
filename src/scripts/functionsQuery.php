@@ -110,3 +110,15 @@ function getPokemon($mysqli, $id_pokemon) {
 
     return $pokemon;
 }
+
+
+function loginResult($mysqli, $username, $password) {
+    $sql_input = "SELECT *
+                  FROM dresseur
+                  WHERE nom_dresseur = '$username'
+                  AND mdp_dresseur = '$password'";
+
+    $result = readDB($mysqli, $sql_input);
+
+    return $result;
+}

@@ -208,6 +208,7 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
     </div>
 
     <?php
+        closeDB($mysqli);
         closeBody();
     ?>
 

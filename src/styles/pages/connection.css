@@ -1,0 +1,93 @@
+.connection-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.connection-wrapper .form-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 90%;
+  width: 30%;
+  padding: 6vh 4vh 2vh 4vh;
+  background: #F8FFFF;
+  border-radius: 1em;
+  box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.37);
+}
+.connection-wrapper .form-section .title-and-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  width: 100%;
+}
+.connection-wrapper .form-section .title-and-form-container .login-title {
+  width: 100%;
+  font-size: 4vh;
+  font-weight: bold;
+  text-align: center;
+}
+.connection-wrapper .form-section .title-and-form-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2em;
+  height: 100%;
+  width: 100%;
+}
+.connection-wrapper .form-section .title-and-form-container form .all-inputs-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1em;
+  width: 100%;
+}
+.connection-wrapper .form-section .title-and-form-container form .all-inputs-container .input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.4em;
+  width: 100%;
+}
+.connection-wrapper .form-section .title-and-form-container form .all-inputs-container .input-container input {
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  background: #E8F0FE;
+  width: 100%;
+  border-radius: 0.4em;
+  padding: 0.5em;
+  font-size: 1em;
+  font-family: "Arboria Medium";
+}
+.connection-wrapper .form-section .title-and-form-container form .all-inputs-container .input-container input:focus {
+  outline: 0.2em solid #E13319;
+}
+.connection-wrapper .form-section .title-and-form-container form .all-inputs-container .incorrect {
+  color: #E13319;
+  font-size: 1.75vh;
+}
+.connection-wrapper .form-section .title-and-form-container form .submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.connection-wrapper .form-section .title-and-form-container form .submit input {
+  max-width: 100%;
+  min-width: 100%;
+}
+.connection-wrapper .form-section .forgot-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2vh;
+}/*# sourceMappingURL=connection.css.map */
