@@ -123,7 +123,32 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
 
 
         <section class="right">
-
+            <div class="evolutions-section">
+                <h3 class="evolution-line top"></h3>
+                <h3 class="evolutions">Évolutions</h3>
+                <h3 class="evolution-line bottom"></h3>
+            </div>
+            <div class="carousel">
+                <div class="images">
+                    <?php
+                        foreach($pokemon["pre_evolutions"] as $key => $value) {
+                            echo '<div class="img-evolution inactive"><div class="img-wrapper"><img src="' .POKEMON_SUGIMORI_PATH. $value["id_pokemon_base"]. '.png" alt="Pokémon ' .$value["nom"]. '"></img></div></div>';
+                        }
+                        echo '<div class="img-evolution active"><div class="img-wrapper"><img src="' .POKEMON_SUGIMORI_PATH. $pokemon["infos"]["0"]["id_pokemon"]. '.png" alt="Pokémon ' .$pokemon["infos"]["0"]["nom"]. '"></img></div></div>';
+                        foreach($pokemon["evolutions"] as $key => $value) {
+                            echo '<div class="img-evolution inactive"><div class="img-wrapper"><img src="' .POKEMON_SUGIMORI_PATH. $value["id_pokemon_evolue"]. '.png" alt="Pokémon ' .$value["nom"]. '"></img></div></div>';
+                        }
+                    ?>
+                </div>
+                <div class="arrows">
+                    <button class="btn arrow up">
+                        <?php echo '<img src="' .ARROW_PATH. '" alt="arrow up"></img>' ?>
+                    </button>
+                    <button class="btn arrow down">
+                    <?php echo '<img src="' .ARROW_PATH. '" alt="arrow down"></img>' ?>
+                    </button>
+                </div>
+            </div>
         </section>
     </div>
 

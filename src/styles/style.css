@@ -8,6 +8,10 @@
   src: url(/ressources/fonts/Arboria-Bold.ttf);
 }
 @font-face {
+  font-family: "Arboria Light";
+  src: url(/ressources/fonts/Arboria-Light.ttf);
+}
+@font-face {
   font-family: "Pokemon Title Hollow";
   src: url(/ressources/fonts/pokemon-title-hollow.ttf);
 }
