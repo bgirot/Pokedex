@@ -229,6 +229,7 @@
   align-items: center;
   justify-content: center;
   gap: 1em;
+  padding-top: 0.4em;
   width: 70%;
   height: 100%;
 }
@@ -271,9 +272,9 @@
   align-items: center;
   gap: 1.5em;
 }
-.pokemon-wrapper .right .carousel .arrows button img {
+.pokemon-wrapper .right .carousel .arrows .arrow img {
   width: 100%;
 }
-.pokemon-wrapper .right .carousel .arrows button.down {
+.pokemon-wrapper .right .carousel .arrows .arrow.down {
   transform: rotate(180deg);
 }/*# sourceMappingURL=pokemon.css.map */

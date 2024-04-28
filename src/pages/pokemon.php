@@ -14,6 +14,7 @@ require_once(DOCUMENT_ROOT .  '/src/includes/dbConfig.php');
 require_once(DOCUMENT_ROOT .  '/src/scripts/dbFunctions.php');
 require_once(DOCUMENT_ROOT .  '/src/scripts/functionsQuery.php');
 require_once(DOCUMENT_ROOT .  '/src/scripts/displayPokedex.php');
+require_once(DOCUMENT_ROOT .  '/src/scripts/utils.php');
 
 require_once(DOCUMENT_ROOT .  '/src/static/head.php');
 require_once(DOCUMENT_ROOT .  '/src/static/header.php');
@@ -131,7 +132,8 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
             <div class="carousel">
                 <div class="images">
                     <?php
-                        foreach($pokemon["pre_evolutions"] as $key => $value) {
+                        $reversed_pre_evolutions = array_reverse($pokemon["pre_evolutions"]);   // So that the order is correct
+                        foreach($reversed_pre_evolutions as $key => $value) {
                             echo '<div class="img-evolution inactive"><div class="img-wrapper"><img src="' .POKEMON_SUGIMORI_PATH. $value["id_pokemon_base"]. '.png" alt="Pokémon ' .$value["nom"]. '"></img></div></div>';
                         }
                         echo '<div class="img-evolution active"><div class="img-wrapper"><img src="' .POKEMON_SUGIMORI_PATH. $pokemon["infos"]["0"]["id_pokemon"]. '.png" alt="Pokémon ' .$pokemon["infos"]["0"]["nom"]. '"></img></div></div>';
@@ -141,12 +143,12 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
                     ?>
                 </div>
                 <div class="arrows">
-                    <button class="btn arrow up">
-                        <?php echo '<img src="' .ARROW_PATH. '" alt="arrow up"></img>' ?>
-                    </button>
-                    <button class="btn arrow down">
-                    <?php echo '<img src="' .ARROW_PATH. '" alt="arrow down"></img>' ?>
-                    </button>
+                    <a class="btn arrow up" <?php echo 'href="' . POKEMON_PATH. '?id_pokemon=' .switchEvolution($pokemon, "up"). '"' ?>>
+                        <?php echo '<img src="' .ARROW_PATH. '" alt="Flèche vers le haut"></img>' ?>
+                    </a>
+                    <a class="btn arrow down" <?php echo 'href="' . POKEMON_PATH. '?id_pokemon=' .switchEvolution($pokemon, "down"). '"' ?>>
+                        <?php echo '<img src="' .ARROW_PATH. '" alt="Flèche vers le bas"></img>' ?>
+                    </a>
                 </div>
             </div>
         </section>

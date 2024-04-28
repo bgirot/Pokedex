@@ -290,6 +290,8 @@
                 justify-content: center;
                 gap: 1em;
 
+                padding-top: 0.4em;
+
                 width: 70%;
                 height: 100%;
 
@@ -344,15 +346,15 @@
                 align-items: center;
                 gap: 1.5em;
 
-                button{
+                .arrow{
 
                     img{
                         width: 100%;
                     }
 
                     &.down{
-                            transform: rotate(180deg);    
-                        }
+                        transform: rotate(180deg);  
+                    }
                 }
             }
         }
