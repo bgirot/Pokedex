@@ -13,6 +13,49 @@ function getPokedex($mysqli) {
     return $result;
 }
 
+
+function getPokedexDresseur($mysqli, $id_dresseur) {
+    $sql_input = "SELECT id_pokemon, nom, numero FROM pokemon";
+
+    $result = readDB($mysqli, $sql_input);
+
+    foreach($result as $key => $value) {
+        $id_pokemon = $value["id_pokemon"];
+
+        $new_sql_input = "SELECT nbVue, nbAttrape
+                          FROM pokedex
+                          WHERE id_dresseur = $id_dresseur
+                          AND id_pokemon = $id_pokemon";
+        $new_info = readDB($mysqli, $new_sql_input);
+        
+        if(empty($new_info)) {
+            $new_info = array(0 => array("nbVue" => 0, "nbAttrape" => 0));
+        }
+
+        $result[$key] = array_merge($result[$key], array("image_path" => POKEMON_SUGIMORI_PATH . $key + 1 . ".png"));
+        $result[$key] = array_merge($result[$key], array("stats" => $new_info));
+    }
+
+    return $result;
+}
+
+
+function getStats($mysqli, $id_pokemon, $id_dresseur) {
+    $sql_input = "SELECT nbVue, nbAttrape
+                  FROM pokedex
+                  WHERE id_dresseur = $id_dresseur
+                  AND id_pokemon = $id_pokemon";
+    
+    $result = readDB($mysqli, $sql_input);
+
+    if(empty($result)) {
+        $result = array(0 => array("nbVue" => 0, "nbAttrape" => 0));
+    }
+
+    return $result;
+}
+
+
 function getAllTypes($mysqli) {
     $sql_input = "SELECT * FROM type";
 

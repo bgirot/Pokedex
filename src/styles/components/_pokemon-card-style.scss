@@ -39,12 +39,74 @@
             text-align: center;
             font-size: 1.9vw;
             width: 100%;
+            margin-top: 0.5em;
         }
 
         .see-more-btn{
             position: absolute;
             top: -1.25em;
             z-index: 3;
+        }
+
+        .dresseur-stats-container{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5em;
+
+            .dresseur-stat{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 0.25em;
+
+                cursor: default;
+
+                img{
+                    height: 1.5em;
+                }
+
+                &:hover > .stat{
+                    .stat-description{
+                        display: block;
+                    }
+                }
+
+                .stat{
+                    position: relative;
+                    margin-bottom: 0.15em;
+                    font-size: 1.2em;
+                    font-weight: bold;
+
+                    .stat-description{
+                        z-index: 99;
+                        display: none;
+                        cursor: default;
+
+                        font-size: 1rem;
+                        font-weight: normal;
+                        color: #110F14;
+                        text-align: center;
+                
+                        position: absolute;
+                        width: min-content;
+                        padding: 0.25em;
+                        bottom: 2em;
+                        left: -2.7em;
+                
+                        background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255,255, 255, 0.1));
+                        backdrop-filter: blur(10px);
+                        -webkit-backdrop-filter: blur(10px);
+                        box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.37);
+                
+                        &.hover{
+                            display: block;
+                        }
+                    }
+                }
+            }
         }
     }
 

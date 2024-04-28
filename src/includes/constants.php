@@ -27,6 +27,8 @@ define('ARROW_PATH', '/ressources/icons/arrow.svg');
 define('SWORD_PATH', '/ressources/icons/sword.svg');
 define('CROSS_PATH', '/ressources/icons/cross.svg');
 define('CONNECTED_USER_ICON_PATH', '/ressources/icons/connected-user-');
+define('SEEN_ICON_PATH', '/ressources/icons/seen.svg');
+define('CAUGHT_ICON_PATH', '/ressources/icons/caught.svg');
 
 // File paths
 define('NORMALIZE_PATH', '/src/styles/normalize.css');

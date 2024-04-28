@@ -32,7 +32,12 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
         $mysqli = connectionDB();
         openBody();
 
-        displayPokedex(getPokedex($mysqli));
+        if(isset($_SESSION["id_user"])) {
+            $id_dresseur = $_SESSION["id_user"];
+            displayPokedex(getPokedexDresseur($mysqli, $id_dresseur));
+        } else {
+            displayPokedex(getPokedex($mysqli));
+        }
     ?>
 
     <?php

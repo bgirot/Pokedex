@@ -19,6 +19,35 @@ function displayPokedex($pokedex) {
                     <span class="see-more-btn-description">Plus d\'infos</span>
                 </a>
                 <span class="pokemon-name">'. $value["nom"] .'</span>
+        ';
+
+        if(isset($_SESSION["is_connected"])) {
+            if ($_SESSION["is_connected"]){
+                echo '
+                
+                <div class="dresseur-stats-container">
+                    <div class="dresseur-stat seen">
+                        <img src="' .SEEN_ICON_PATH. '" alt="Icone vue"></img>
+                        <span class="stat">
+                            ' .$value["stats"]["0"]["nbVue"]. '
+                            <div class="stat-description">Pokémon vu ' .$value["stats"]["0"]["nbVue"]. ' fois</div>
+                        </span>
+                    </div>
+
+                    <div class="dresseur-stat caught">
+                        <img src="' .CAUGHT_ICON_PATH. '" alt="Icone vue"></img>
+                        <span class="stat">
+                            '.$value["stats"]["0"]["nbAttrape"].'
+                            <div class="stat-description">Pokémon attrapé ' .$value["stats"]["0"]["nbAttrape"]. ' fois</div>
+                        </span>
+                    </div>
+                </div>
+
+                ';
+            }
+        }
+
+        echo'
             </div>
             
         </li>

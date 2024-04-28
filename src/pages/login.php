@@ -37,7 +37,7 @@ if (empty($login_result)) {
     $_SESSION["username"] = $username;
 
     closeDB($mysqli);
-    header('Location: ./wip.php');
+    header('Location: ../../index.php');
     exit();
 
 }

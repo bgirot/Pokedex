@@ -122,7 +122,37 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
 
             <span class="description"><?php echo $pokemon["infos"]["0"]["description"] ?></span>
 
-            <div class="fictive-element"></div>
+            <?php
+                if(isset($_SESSION["is_connected"])) {
+                    if ($_SESSION["is_connected"]){
+                        $stats = getStats($mysqli, $pokemon["infos"]["0"]["id_pokemon"], $_SESSION["id_user"]);
+                        $nb_vue = $stats[0]["nbVue"];
+                        $nb_attrape = $stats[0]["nbAttrape"];
+
+                        echo '
+                        
+                        <div class="dresseur-stats-container">
+                            <div class="dresseur-stat seen">
+                                <img src="' .SEEN_ICON_PATH. '" alt="Icone vue"></img>
+                                <span class="stat">
+                                    ' .$nb_vue. '
+                                    <div class="stat-description seen">Pokémon vu ' .$nb_vue. ' fois</div>
+                                </span>
+                            </div>
+        
+                            <div class="dresseur-stat caught">
+                                <img src="' .CAUGHT_ICON_PATH. '" alt="Icone vue"></img>
+                                <span class="stat">
+                                    '.$nb_attrape.'
+                                    <div class="stat-description">Pokémon attrapé ' .$nb_attrape. ' fois</div>
+                                </span>
+                            </div>
+                        </div>
+        
+                        ';
+                    }
+                }
+            ?>
 
         </section>
 
