@@ -1,8 +1,11 @@
-// Dropdown menu manager
+// Dropdown menu and moves menu manager
 window.onclick = function(event) {
 
     let navButton = document.getElementById('nav-btn');
     let navMenu = document.getElementById('nav-menu');
+    let moveButton = document.getElementById('move-btn');
+    let moveMenu = document.getElementById('move-menu');
+    let moveClose = document.getElementById('move-close');
 
     if (navButton.contains(event.target)) {
 
@@ -25,15 +28,6 @@ window.onclick = function(event) {
         }
 
     }
-
-}
-
-// Moves menu manager
-window.onclick = function(event) {
-
-    let moveButton = document.getElementById('move-btn');
-    let moveMenu = document.getElementById('move-menu');
-    let moveClose = document.getElementById('move-close');
 
     if (moveButton.contains(event.target)) {
 
@@ -67,6 +61,7 @@ window.onclick = function(event) {
     }
 
 }
+
 
 
 // To generate the color of the pokemon card in the pokedex page
