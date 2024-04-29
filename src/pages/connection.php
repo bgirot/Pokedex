@@ -38,7 +38,16 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
     <div class="connection-wrapper">
         <section class="form-section">
             <div class="title-and-form-container">
-                <h2 class="login-title">Connectez vous</h2>
+                <h2 class="login-title">
+                    Connectez vous
+                    <?php
+                        if(isset($_GET["err"])) {
+                            if($_GET["err"] == 2) {
+                                echo '<div class="incorrect">Connectez vous pour accéder à votre Pokédex</div>';
+                            }
+                        }
+                    ?>
+                </h2>
                 <form method="post" action="login.php">
                     <div class="all-inputs-container">
                         <div class="input-container">

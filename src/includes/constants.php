@@ -29,6 +29,7 @@ define('CROSS_PATH', '/ressources/icons/cross.svg');
 define('CONNECTED_USER_ICON_PATH', '/ressources/icons/connected-user-');
 define('SEEN_ICON_PATH', '/ressources/icons/seen.svg');
 define('CAUGHT_ICON_PATH', '/ressources/icons/caught.svg');
+define('EDIT_ICON_PATH', '/ressources/icons/edit.svg');
 
 // File paths
 define('NORMALIZE_PATH', '/src/styles/normalize.css');
@@ -37,6 +38,7 @@ define('ABOUT_WIP_STYLE_PATH', '/src/styles/pages/about-wip.css');
 define('POKEMON_STYLE_PATH', '/src/styles/pages/pokemon.css');
 define('FRONT_PATH', '/src/scripts/front.js');
 define('CONNECTION_STYLE_PATH', '/src/styles/pages/connection.css');
+define('EDIT_STYLE_PATH', '/src/styles/pages/edit.css');
 
 // Pages paths
 define('HOME_PATH', '/index.php');
@@ -47,3 +49,4 @@ define('CONNECTION_PATH', '/src/pages/connection.php');
 define('DISCONNECTION_PATH', '/src/pages/logout.php');
 define('LOGIN_PATH', '/src/pages/login.php');
 define('LOGOUT_PATH', '/src/pages/logout.php');
+define('EDIT_PATH', '/src/pages/edit.php');

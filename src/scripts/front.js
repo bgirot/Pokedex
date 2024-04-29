@@ -29,7 +29,7 @@ window.onclick = function(event) {
 
     }
 
-    if (moveButton.contains(event.target)) {
+    if (moveButton != null && moveButton.contains(event.target)) {
 
         if (! moveMenu.contains(event.target)) {
             
@@ -42,7 +42,7 @@ window.onclick = function(event) {
                 moveMenu.classList.remove('active');
 
             }
-        } else if (moveClose.contains(event.target)) {
+        } else if (moveClose != null && moveMenu != null &&  moveClose.contains(event.target)) {
             
             if (moveMenu.classList.contains('active')) {
 
@@ -51,7 +51,7 @@ window.onclick = function(event) {
             }
         }
 
-    } else if (! moveMenu.contains(event.target)) {
+    } else if (moveMenu != null && ! moveMenu.contains(event.target)) {
 
         if (moveMenu.classList.contains('active')) {
 
@@ -144,4 +144,11 @@ function shinyToNormal() {
 function normalToShiny() {
     let img = document.getElementById("img-pokemon");
     img.src = img.src.replace("pokemon_sugimori", "pokemon_sugimori_shiny");
+}
+
+// To handle the image switch on edit pokedex page
+function pokemonSwitchHandler(id) {
+    let img = document.getElementById("pokemon-img");
+
+    img.src = ("../../ressources/images/pokemons/pokemon_sugimori/" + id + ".png");
 }

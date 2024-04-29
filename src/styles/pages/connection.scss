@@ -35,6 +35,10 @@
                 font-size: 4vh;
                 font-weight: bold;
                 text-align: center;
+                .incorrect{
+                    color: #316AB1;
+                    font-size: 1.5vh;
+                }
             }
             
             form{
@@ -42,7 +46,7 @@
                 flex-direction: column;
                 align-items: flex-start;
                 justify-content: center;
-                gap: 2em;
+                gap: 5vh;
 
                 height: 100%;
                 width: 100%;

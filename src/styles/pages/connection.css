@@ -31,12 +31,16 @@
   font-weight: bold;
   text-align: center;
 }
+.connection-wrapper .form-section .title-and-form-container .login-title .incorrect {
+  color: #316AB1;
+  font-size: 1.5vh;
+}
 .connection-wrapper .form-section .title-and-form-container form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  gap: 2em;
+  gap: 5vh;
   height: 100%;
   width: 100%;
 }

@@ -9,11 +9,13 @@ function includeHeader() {
                            Déconnexion
                        </a>';
         $user_icon = CONNECTED_USER_ICON_PATH . $_SESSION["id_user"] . '.png';
+        $pokedex_link = EDIT_PATH;
     } else{
         $co_or_deco = '<a class="btn menu-btn" href="'.CONNECTION_PATH.'">
                            Connexion
                        </a>';
         $user_icon = USER_ICON_PATH;
+        $pokedex_link = CONNECTION_PATH . "?err=2";
     }
 
 
@@ -42,18 +44,19 @@ function includeHeader() {
                         </a>
                     </li>
                     <li>
-                        ' .$co_or_deco. '
-                    </li>
-                    <li>
-                        <a class="btn menu-btn" href="'.WIP_PATH.'">
-                            Mon Pokédex
-                        </a>
-                    </li>
-                    <li>
                         <a class="btn menu-btn" href="'.ABOUT_PATH.'">
                             À propos
                         </a>
                     </li>
+                    <li>
+                        <a class="btn menu-btn" href="' .$pokedex_link. '">
+                            Mon Pokédex
+                        </a>
+                    </li>
+                    <li>
+                        ' .$co_or_deco. '
+                    </li>
+
                 </ul>
             </nav>
         </div>
