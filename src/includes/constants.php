@@ -50,3 +50,4 @@ define('DISCONNECTION_PATH', '/src/pages/logout.php');
 define('LOGIN_PATH', '/src/pages/login.php');
 define('LOGOUT_PATH', '/src/pages/logout.php');
 define('EDIT_PATH', '/src/pages/edit.php');
+define('UPDATE_PATH', '/src/pages/update.php');

@@ -34,7 +34,7 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
         $mysqli = connectionDB();
         openBody();
 
-        $pokedex = getPokedex($mysqli);
+        $pokedexDresseur = getPokedexDresseur($mysqli, $_SESSION["id_user"]);
 
     ?>
 
@@ -42,51 +42,59 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
 
         <section class="form-section">
 
-            <form method="post" action="">
+            <form id="edit-form" method="post" action="">
                 <h2 class="edit-title">
                     Modifier un pokémon
                 </h2>
 
                 <div class="all-inputs-container">
-                        <div class="pokemon-input-container">
-                            <div class="pokemon-input">
-                                <img src="<?php echo EDIT_ICON_PATH ?>" alt="Bouton éditer">
-                                <input class="pokemon-input" list="Pokemon" onchange="console.log('ok')" value="<?php echo $pokedex[0]["nom"]?>">
-                                <datalist id="Pokemon">
-                                <?php
-                                    foreach($pokedex as $key => $value) {
-                                        echo '<option value="' .$value["nom"]. '"></option>';
-                                    }
-                                ?>
-                                </datalist>
+                    <div class="pokemon-input-container">
+                        <div class="pokemon-input">
+                            <img src="<?php echo EDIT_ICON_PATH ?>" alt="Bouton éditer">
+                            <input id="pokemon-input" class="pokemon-input" list="Pokemon" onchange='pokemonSwitch(<?php echo json_encode($pokedexDresseur) ?>)' onmouseover="focus();" onkeydown="if(event.keyCode===13) {event.preventDefault(); document.getElementById('seen').focus();}">
+                            <datalist id="Pokemon">
+                            <?php
+                                foreach($pokedexDresseur as $key => $value) {
+                                    echo '<option value="' .$value["nom"]. '"></option>';
+                                }
+                            ?>
+                            </datalist>
+                        </div>
+                        <div class="pokemon-img-wrapper">
+                            <div class="pokemon-img-container">
+                                <img id="pokemon-img" src="/ressources/images/pokemons/unknown-pokemon.png" alt="Test">
+                                <div class="shadow"></div>
                             </div>
-                            <img class="pokemon-img" src="/ressources/images/pokemons/pokemon_sugimori/1.png" alt="Test">
+                        </div>
+
+                        
+                    </div>
+                    
+                    <div class="stats-input-wrapper">
+                        <div class="stats-inputs-container">
+                            <img src="<?php echo SEEN_ICON_PATH ?>" alt="Icone vu">
+
+                            <div class="stat-input">
+                                <button id="seen-minus" class="btn minus-btn" type="button" onclick="plusMinusHandler(this.id)">-</button>
+                                <input id="seen" name="seen" type="number" value="0" required>
+                                <button id="seen-plus" class="btn plus-btn" type="button" onclick="plusMinusHandler(this.id)">+</button>
+                            </div>
                         </div>
 
                         <div class="stats-inputs-container">
-                            <div class="stat-input">
-                                <input id="seen" name="seen" type="number" required>
-                            </div>
+                            <img src="<?php echo CAUGHT_ICON_PATH ?>" alt="Icone vu">
 
-                            <div class="stat-input">
-                                <input id="caught" name="caught" type="number" required>
+                            <div class="stat-input">    
+                                <button id="caught-minus" class="btn minus-btn" type="button" onclick="plusMinusHandler(this.id)">-</button>
+                                <input id="caught" name="caught" type="number" value="0" required>
+                                <button id="caught-plus" class="btn plus-btn" type="button" onclick="plusMinusHandler(this.id)">+</button>
                             </div>
                         </div>
-
-                        <?php
-                            if(isset($_GET["err"])) {
-                                if($_GET["err"] == 1) {
-                                    echo '<div class="incorrect">Nom d\'utilisateur ou mot de passe incorrect</div>';
-                                }
-                            }
-                        ?>
                     </div>
-
-                    
-
-                    <div class="submit">
-                        <input class="btn submit-btn" type="submit" value="Valider">
-                    </div>
+                </div>
+                <div class="submit">
+                    <input class="btn submit-btn" type="submit" value="Valider">
+                </div>
             </form>
 
         </section>

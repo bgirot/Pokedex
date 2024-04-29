@@ -41,14 +41,17 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
                 <h2 class="login-title">
                     Connectez vous
                     <?php
+                        $redirect = "index";
+
                         if(isset($_GET["err"])) {
                             if($_GET["err"] == 2) {
                                 echo '<div class="incorrect">Connectez vous pour accéder à votre Pokédex</div>';
+                                $redirect = "pokedex";
                             }
                         }
                     ?>
                 </h2>
-                <form method="post" action="login.php">
+                <form method="post" action="login.php?redirect=<?php echo $redirect?>">
                     <div class="all-inputs-container">
                         <div class="input-container">
                             <label for="username">Nom d'utilisateur</label>

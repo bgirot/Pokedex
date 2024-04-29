@@ -226,10 +226,27 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
                     ?>
                 </div>
                 <div class="arrows">
-                    <a class="btn arrow up" <?php echo 'href="' . POKEMON_PATH. '?id_pokemon=' .switchEvolution($pokemon, "up"). '"' ?>>
+                    <?php
+                        $href_up = switchEvolution($pokemon, "up");
+                        $href_down = switchEvolution($pokemon, "down");
+
+                        if($href_up == null) {
+                            $href_up = "";
+                        } else {
+                            $href_up = POKEMON_PATH . '?id_pokemon=' . $href_up;
+                        }
+
+                        if($href_down == null) {
+                            $href_down = "";
+                        } else {
+                            $href_down = POKEMON_PATH . '?id_pokemon=' . $href_down;
+                        }
+                        
+                    ?>
+                    <a class="btn arrow up" <?php echo 'href="' .$href_up. '"' ?>>
                         <?php echo '<img src="' .ARROW_PATH. '" alt="Flèche vers le haut"></img>' ?>
                     </a>
-                    <a class="btn arrow down" <?php echo 'href="' . POKEMON_PATH. '?id_pokemon=' .switchEvolution($pokemon, "down"). '"' ?>>
+                    <a class="btn arrow down" <?php echo 'href="' .$href_down. '"' ?>>
                         <?php echo '<img src="' .ARROW_PATH. '" alt="Flèche vers le bas"></img>' ?>
                     </a>
                 </div>

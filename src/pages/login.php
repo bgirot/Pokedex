@@ -37,7 +37,16 @@ if (empty($login_result)) {
     $_SESSION["username"] = $username;
 
     closeDB($mysqli);
-    header('Location: ../../index.php');
+
+    if(isset($_GET["redirect"])) {
+        if($_GET["redirect"] == "index") {
+            $location = 'Location: ../../index.php';
+        } else if($_GET["redirect"] == "pokedex") {
+            $location = 'Location: ./edit.php';
+        }
+    }
+    
+    header($location);
     exit();
 
 }

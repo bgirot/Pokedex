@@ -165,3 +165,13 @@ function loginResult($mysqli, $username, $password) {
 
     return $result;
 }
+
+
+function updateStats($mysqli, $seen, $caught, $id_pokemon, $id_dresseur) {
+    $sql_input = "UPDATE pokedex
+                  SET nbVue = $seen, nbAttrape = $caught
+                  WHERE id_pokemon = $id_pokemon
+                  AND id_dresseur = $id_dresseur";
+
+    writeDB($mysqli, $sql_input);
+}

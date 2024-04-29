@@ -64,7 +64,7 @@ window.onclick = function(event) {
 
 
 
-// To generate the color of the pokemon card in the pokedex page
+// To generate the color of the pokemon card in the pokedexDresseur page
 // Sets the main color of an image to the background of the div (for pokemon cards)
 function setMainColorToBackground(id) {
     let img = document.getElementById("img-"+id);
@@ -146,9 +146,67 @@ function normalToShiny() {
     img.src = img.src.replace("pokemon_sugimori", "pokemon_sugimori_shiny");
 }
 
-// To handle the image switch on edit pokedex page
-function pokemonSwitchHandler(id) {
-    let img = document.getElementById("pokemon-img");
 
-    img.src = ("../../ressources/images/pokemons/pokemon_sugimori/" + id + ".png");
+
+// To handle the image switch on edit pokedexDresseur page
+function pokemonSwitch(pokedexDresseur) {
+    let input = document.getElementById("pokemon-input");
+    let inputValue = input.value;
+    let img = document.getElementById("pokemon-img");
+    let seenInput = document.getElementById("seen");
+    let caughtInput = document.getElementById("caught");
+    let form = document.getElementById("edit-form");
+
+    for (let key in pokedexDresseur){
+        // If the pokemon exists
+        if (inputValue == pokedexDresseur[key]["nom"]) {
+            newPokemonID = pokedexDresseur[key]["id_pokemon"]
+            imgPath = "/ressources/images/pokemons/pokemon_sugimori/" + pokedexDresseur[key]["id_pokemon"] + ".png";
+            seen = pokedexDresseur[key]["stats"][0]["nbVue"];
+            caught = pokedexDresseur[key]["stats"][0]["nbAttrape"];
+
+            img.src = imgPath;
+            seenInput.value = seen;
+            caughtInput.value = caught;
+            form.action = "./update.php?id_pokemon=" + newPokemonID;
+
+            console.log(form);
+            return;
+        }
+    }
+
+    imgPath = '/ressources/images/pokemons/unknown-pokemon.png'
+    seenInput.value = 0;
+    caughtInput.value = 0;
+    img.src = imgPath;
+    form.action = "";
+}
+
+
+// Plus and minus button in edit.php
+function plusMinusHandler(id) {
+    let seenInput = document.getElementById("seen");
+    let caughtInput = document.getElementById("caught");
+    
+    if(id == "seen-minus") {
+        if(seenInput.value > 0){
+            seenInput.value = parseInt(seenInput.value) - 1;
+        }
+    }
+
+    if(id == "seen-plus") {
+        console.log(seenInput.value);
+        seenInput.value = parseInt(seenInput.value) + 1;
+    }
+
+    if(id == "caught-minus") {
+        if(caughtInput.value > 0){
+            caughtInput.value = parseInt(caughtInput.value) - 1;
+        }
+    }
+
+    if(id == "caught-plus") {
+        caughtInput.value = parseInt(caughtInput.value) + 1;
+    }
+
 }
