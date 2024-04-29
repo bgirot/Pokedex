@@ -155,7 +155,7 @@
   width: -moz-min-content;
   width: min-content;
   padding: 0.25em;
-  bottom: 2em;
+  bottom: 1.75em;
   left: -2.7em;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
   backdrop-filter: blur(10px);
@@ -163,7 +163,7 @@
   box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.37);
 }
 .pokemon-wrapper .left .dresseur-stats-container .dresseur-stat .stat .stat-description.seen {
-  left: -1em;
+  left: -1.25em;
 }
 .pokemon-wrapper .left .dresseur-stats-container .dresseur-stat .stat .stat-description.hover {
   display: block;
