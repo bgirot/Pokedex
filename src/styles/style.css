@@ -89,7 +89,8 @@ header .nav-section #nav-btn img {
 header .nav-section nav {
   display: none;
   top: 3.5vw;
-  width: 15em;
+  width: -moz-fit-content;
+  width: fit-content;
   position: absolute;
   border: 0.25em solid #0F1014;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
@@ -110,7 +111,7 @@ header .nav-section nav ul {
 }
 header .nav-section nav ul li {
   width: 100%;
-  text-align: center;
+  text-align: left;
   font-weight: 600;
   font-size: 1.2em;
 }

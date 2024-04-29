@@ -50,7 +50,7 @@ function includeHeader() {
                     </li>
                     <li>
                         <a class="btn menu-btn" href="' .$pokedex_link. '">
-                            Mon Pokédex
+                            Modifier mon Pokédex
                         </a>
                     </li>
                     <li>

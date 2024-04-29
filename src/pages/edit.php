@@ -44,7 +44,7 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
 
             <form id="edit-form" method="post" action="">
                 <h2 class="edit-title">
-                    Modifier un pokémon
+                    Modifier un Pokémon
                 </h2>
 
                 <div class="all-inputs-container">
