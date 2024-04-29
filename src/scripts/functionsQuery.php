@@ -167,11 +167,36 @@ function loginResult($mysqli, $username, $password) {
 }
 
 
-function updateStats($mysqli, $seen, $caught, $id_pokemon, $id_dresseur) {
-    $sql_input = "UPDATE pokedex
-                  SET nbVue = $seen, nbAttrape = $caught
-                  WHERE id_pokemon = $id_pokemon
-                  AND id_dresseur = $id_dresseur";
+function updateStats($mysqli, $seen, $caught, $id_pokemon, $id_dresseur, $pokedex_dresseur) {
 
-    writeDB($mysqli, $sql_input);
+    // If the pokemon is deleted from the pokedex
+    if ($seen == 0 && $caught == 0) {
+        $sql_input = "DELETE FROM pokedex
+                      WHERE id_pokemon = $id_pokemon
+                      AND id_dresseur = $id_dresseur";
+        writeDB($mysqli, $sql_input);
+
+    } else {
+
+        $current_seen_stat = $pokedex_dresseur[$id_pokemon - 1]["stats"][0]["nbVue"];
+        $current_caught_stat = $pokedex_dresseur[$id_pokemon - 1]["stats"][0]["nbAttrape"];
+
+        if ($current_seen_stat != 0 && $current_caught_stat != 0) {
+
+            $sql_input = "UPDATE pokedex
+                        SET nbVue = $seen, nbAttrape = $caught
+                        WHERE id_pokemon = $id_pokemon
+                        AND id_dresseur = $id_dresseur";
+            writeDB($mysqli, $sql_input);
+
+        // If the pokemon is not in the pokedex 
+        } else {
+            $sql_input = "INSERT INTO pokedex (id_dresseur, id_pokemon, nbVue, nbAttrape)
+                        VALUES ($id_dresseur, $id_pokemon, $seen, $caught)";
+            writeDB($mysqli, $sql_input);
+
+        }
+        
+    }
+
 }

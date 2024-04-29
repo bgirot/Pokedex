@@ -23,8 +23,9 @@ $caught = $_POST["caught"];
 
 $id_dresseur = $_SESSION["id_user"];
 $id_pokemon = $_GET["id_pokemon"];
+$pokedex_dresseur = getPokedexDresseur($mysqli, $id_dresseur);
 
-updateStats($mysqli, $seen, $caught, $id_pokemon, $id_dresseur);
+updateStats($mysqli, $seen, $caught, $id_pokemon, $id_dresseur, $pokedex_dresseur);
 
 
 closeDB($mysqli);
