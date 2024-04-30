@@ -46,6 +46,7 @@ if (empty($login_result)) {
         }
     }
     
+    closeDB($mysqli);
     header($location);
     exit();
 
