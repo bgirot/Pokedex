@@ -72,7 +72,8 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
                     
                     <div class="stats-input-wrapper">
                         <div class="stats-inputs-container">
-                            <img src="<?php echo SEEN_ICON_PATH ?>" alt="Icone vu">
+                            <img class="seen-icon" src="<?php echo SEEN_ICON_PATH ?>" alt="Icone vu">
+                            <div class="stat-description seen-description">Nombre de vues</div>
 
                             <div class="stat-input">
                                 <button id="seen-minus" class="btn minus-btn" type="button" onclick="plusMinusHandler(this.id)">-</button>
@@ -82,7 +83,8 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
                         </div>
 
                         <div class="stats-inputs-container">
-                            <img src="<?php echo CAUGHT_ICON_PATH ?>" alt="Icone vu">
+                            <img class="caught-icon" src="<?php echo CAUGHT_ICON_PATH ?>" alt="Icone vu">
+                            <div class="stat-description caught-description">Nombre de cramptés</div>
 
                             <div class="stat-input">    
                                 <button id="caught-minus" class="btn minus-btn" type="button" onclick="plusMinusHandler(this.id)">-</button>
