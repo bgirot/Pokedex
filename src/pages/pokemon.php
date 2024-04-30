@@ -42,6 +42,15 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
             exit();
         } else{
             $id_pokemon = $_GET['id_pokemon'];
+
+            $pokedex = getPokedex($mysqli);
+
+            // If the pokemon isn't in the pokdex
+            // Not the best solution cauz the id doesn't necessarly matches the number of pokemons in the pokdex
+            if($id_pokemon > count($pokedex)) {
+                header ('Location: '.HOME_PATH.'');
+                exit(); 
+            }
         }
 
         
