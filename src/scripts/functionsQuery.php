@@ -107,7 +107,7 @@ function getPokemon($mysqli, $id_pokemon) {
     $pre_evolutions = readDB($mysqli, $pre_evolutions_sql_input);
 
 
-    // If the pokemon has more than one evolution or pre-evolution
+    // __________Evolutions Handler__________
     if (!$evolutions == null) {
         $id_next_evolution = $evolutions[0]["id_pokemon_evolue"];
         
@@ -180,8 +180,8 @@ function updateStats($mysqli, $seen, $caught, $id_pokemon, $id_dresseur, $pokede
 
         $current_seen_stat = $pokedex_dresseur[$id_pokemon - 1]["stats"][0]["nbVue"];
         $current_caught_stat = $pokedex_dresseur[$id_pokemon - 1]["stats"][0]["nbAttrape"];
-
-        if ($current_seen_stat != 0 && $current_caught_stat != 0) {
+        
+        if ($current_seen_stat != 0 || $current_caught_stat != 0) {
 
             $sql_input = "UPDATE pokedex
                         SET nbVue = $seen, nbAttrape = $caught
