@@ -51,7 +51,7 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
                     <div class="pokemon-input-container">
                         <div class="pokemon-input">
                             <img src="<?php echo EDIT_ICON_PATH ?>" alt="Bouton éditer">
-                            <input id="pokemon-input" class="pokemon-input" list="Pokemon" onchange='pokemonSwitch(<?php echo json_encode($pokedexDresseur) ?>)' onmouseover="focus();" onkeydown="if(event.keyCode===13) {event.preventDefault(); document.getElementById('seen').focus();}">
+                            <input id="pokemon-input" class="pokemon-input" list="Pokemon" required onchange='pokemonSwitch(<?php echo json_encode($pokedexDresseur) ?>)' onmouseover="focus();" onkeydown="if(event.keyCode===13) {event.preventDefault(); document.getElementById('seen').focus();}">
                             <datalist id="Pokemon">
                             <?php
                                 foreach($pokedexDresseur as $key => $value) {
@@ -76,9 +76,9 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
                             <div class="stat-description seen-description">Nombre de vues</div>
 
                             <div class="stat-input">
-                                <button id="seen-minus" class="btn minus-btn" type="button" onclick="plusMinusHandler(this.id)">-</button>
-                                <input id="seen" name="seen" type="number" value="0" required>
-                                <button id="seen-plus" class="btn plus-btn" type="button" onclick="plusMinusHandler(this.id)">+</button>
+                                <button id="seen-minus" class="btn minus-btn" type="button" tabindex="-1" onclick="plusMinusHandler(this.id)">-</button>
+                                <input id="seen" name="seen" type="number" value="0" min="0" required>
+                                <button id="seen-plus" class="btn plus-btn" type="button" tabindex="-1" onclick="plusMinusHandler(this.id)">+</button>
                             </div>
                         </div>
 
@@ -87,9 +87,9 @@ require_once(DOCUMENT_ROOT .  '/src/static/footer.php');
                             <div class="stat-description caught-description">Nombre de cramptés</div>
 
                             <div class="stat-input">    
-                                <button id="caught-minus" class="btn minus-btn" type="button" onclick="plusMinusHandler(this.id)">-</button>
-                                <input id="caught" name="caught" type="number" value="0" required>
-                                <button id="caught-plus" class="btn plus-btn" type="button" onclick="plusMinusHandler(this.id)">+</button>
+                                <button id="caught-minus" class="btn minus-btn" type="button" tabindex="-1" onclick="plusMinusHandler(this.id)">-</button>
+                                <input id="caught" name="caught" type="number" value="0" min="0" required>
+                                <button id="caught-plus" class="btn plus-btn" type="button" tabindex="-1" onclick="plusMinusHandler(this.id)">+</button>
                             </div>
                         </div>
                     </div>
