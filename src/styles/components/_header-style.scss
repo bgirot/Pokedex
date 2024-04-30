@@ -51,7 +51,7 @@ header{
 
             top: 3.5vw;
 
-            width: fit-content;
+            width: max-content;
             position: absolute;
 
             border: 0.25em solid #0F1014;
@@ -73,7 +73,7 @@ header{
                 li{
                     width: 100%;
 
-                    text-align: left;
+                    text-align: center;
                     font-weight: 600;
                     font-size: 1.2em;
 
