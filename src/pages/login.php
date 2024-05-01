@@ -36,8 +36,7 @@ if (empty($login_result)) {
     $_SESSION["id_user"] = $login_result[0]["id_dresseur"];
     $_SESSION["username"] = $username;
 
-    closeDB($mysqli);
-
+    
     if(isset($_GET["redirect"])) {
         if($_GET["redirect"] == "index") {
             $location = 'Location: ../../index.php';
